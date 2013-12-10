@@ -36,7 +36,7 @@ $(document).ready(function() {
                 viewHeight = $(window).height(),
                 contentHeight = viewHeight - (footer.outerHeight() + header.outerHeight());
 
-        if ((content.outerHeight() + footer.outerHeight() + header.outerHeight() ) !== viewHeight) {
+        if ((content.outerHeight() + footer.outerHeight() + header.outerHeight()) !== viewHeight) {
             contentHeight -= (content.outerHeight() - content.height() + 1);
             content.height(contentHeight);
         }
@@ -73,9 +73,17 @@ $(document).ready(function() {
     $("#blimpiar").click(function() {
         limpiabusquedamap();
     });
+    /*
+     $("#logbt").click(function() {
+     $.mobile.changePage("#logpage");
+     });
+     */
 
-    $("#logbt").click(function() {
-        $.mobile.changePage("#logpage");
+
+    $("#resultado").click(function() {
+        $("#resultado").fadeOut("slow", function() {
+            mensajeLimpia();
+        });
     });
 
     $('#popup').live('pageshow', function(event, ui) {
@@ -86,14 +94,14 @@ $(document).ready(function() {
         }
         $("ul#details-list").empty().append(li).listview("refresh");
     });
-    
+
     $('#searchType').change(function() {
-        $('#search_results').empty();        
+        $('#search_results').empty();
         $('#query').val('')
         $('#query').focus();
     });
 
-            
+
     $('#searchpage').live('pageshow', function(event, ui) {
         $('#query').bind('keyup', function(e) {
             delay(function() {
@@ -110,9 +118,9 @@ $(document).ready(function() {
                 stype = $('#searchType').val();
                 qvalor = $('#query')[0].value;
                 console.log('Buscando ' + stype + ': ' + qvalor);
-                
+
                 logp('Buscando ' + stype + ': ' + qvalor);
-                
+
                 Server.suggest(stype, qvalor, function(results) {
                     $.each(results, function() {
                         var place = this;
@@ -243,6 +251,7 @@ function buscaDescripcion(pBID) {
                     }
                     lines.push(line);
                 }
+                var pointer = lines[0];
 
                 $('#hoverHeader').removeClass("clicksel");
                 $('#hoverHeader').addClass("searchsel");
@@ -250,8 +259,13 @@ function buscaDescripcion(pBID) {
                 $('#hoverPointer').html(lines.shift());
                 var linesHtml = '<div>' + lines.join('</div><div>') + '</div>';
                 $('#hoverDetail').html(linesHtml);
-                $('#popupUbicacion').fadeIn();
-                $("#popupUbicacion").popup("open", {positionTo: '#mensajenav'})
+                //      $('#popupUbicacion').fadeIn();
+                //      $("#popupUbicacion").popup("open", {positionTo: '#mensajenav'})
+
+                $('#hresultado').removeClass("clickdiv");
+                $('#hresultado').addClass("searchdiv");
+
+                mensajeSeleccion(pointer, linesHtml);
 
                 //_layer.addFeatures(nuevasFeatures);
 

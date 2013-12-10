@@ -22,6 +22,18 @@ function limpiabusquedamap() {
     lsearch2.removeAllFeatures();
     lsearchwfs.removeAllFeatures();
     miubicacion.removeAllFeatures();
+    mensajeLimpia();
+}
+
+function mensajeSeleccion(encab, contenido){
+    $("#hresultado").html("Pointer: "+encab);
+    $("#cresultado").html(contenido);  
+    $("#resultado").fadeIn();
+}
+
+function mensajeLimpia(){
+    $("#hresultado").html("");
+    $("#cresultado").html("");    
 }
 
 function extender(bvector, blsearch2, bmiubicacion) {

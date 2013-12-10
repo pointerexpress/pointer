@@ -102,17 +102,24 @@ OpenLayers.Control.Click = OpenLayers.Class(OpenLayers.Control, {
                             $('#hoverHeader').removeClass("searchsel");
                             $('#hoverHeader').addClass("clicksel");
 
+                            var pointer=lines[0];
+                
                             $('#hoverPointer').html(lines.shift());
                             var linesHtml = '<div>' + lines.join('</div><div>') + '</div>';
                             $('#hoverDetail').html(linesHtml);
 
-                            $('#popupUbicacion').fadeIn();
+                            //$('#popupUbicacion').fadeIn();
 
-                            $("#popupUbicacion").popup("open", {positionTo: '#mensajenav'});
+                            //$("#popupUbicacion").popup("open", {positionTo: '#mensajenav'});
 
                             _layer.removeAllFeatures();
                             _layer.addFeatures(nuevasFeatures);
                             $.mobile.hidePageLoadingMsg();
+                                            
+                            $('#hresultado').removeClass("searchdiv");
+                            $('#hresultado').addClass("clickdiv");
+
+                            mensajeSeleccion(pointer, linesHtml);
                             
                             limpiabusquedamap;
 
