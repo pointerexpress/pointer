@@ -73,11 +73,12 @@ $(document).ready(function() {
     $("#blimpiar").click(function() {
         limpiabusquedamap();
     });
-    /*
-     $("#logbt").click(function() {
-     $.mobile.changePage("#logpage");
-     });
-     */
+
+    $("#logbt").click(function() {
+        $.mobile.changePage("#logpage");
+        caracteristicas();
+    });
+
 
 
     $("#resultado").click(function() {

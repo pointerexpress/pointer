@@ -73,3 +73,14 @@ function extender(bvector, blsearch2, bmiubicacion) {
     $.mobile.changePage("#manpage");
 
 }
+
+function caracteristicas() {
+    logp(/*'Nombre: ' + device.name + '<br />' +
+            'PhoneGap: ' + device.phonegap + '<br />' +
+            'Plataforma: ' + device.platform + '<br />' +
+            'UUID: ' + device.uuid + '<br />' +
+            'Version: ' + device.version + '<br />'+*/
+            'Pixel radio: '+window.devicePixelRatio+
+            ', Ancho: '+$(window).width()+
+            ', Alto: '+$(window).height());
+}
