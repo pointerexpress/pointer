@@ -7,8 +7,27 @@ function doClose() {
     $('#popupUbicacion').fadeOut();
 }
 
+function getDeviceProperty()
+{
+    var platf = "Otro";
+
+    try {
+        platf = device.platform;
+    } catch (e) {
+        platf = "Otro";
+    }
+
+    if (platf !== "Android") {
+        $("#salirapp").hide();
+    }
+
+    caracteristicas();
+}
+
 $(document).ready(function() {
 
+    document.addEventListener("deviceready", getDeviceProperty, false);
+    
     $("#salirapp").click(function() {
         if (navigator.app) {
             navigator.app.exitApp();
@@ -17,17 +36,6 @@ $(document).ready(function() {
         }
     });
 
-    var platf = "Otro";
-
-    try {
-        platf = device.platform;
-    } catch (e) {
-        platf = "Otro";
-    }
-    
-    if (platf != "Android") {
-        $("#salirapp").hide();
-    }
 
     $('#popupUbicacion-screen').click(function() {
         $.mobile.changePage("#manpage");
