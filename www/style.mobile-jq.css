@@ -200,18 +200,6 @@ body {
     #salidaapp {
         zoom: 0.8;
     }
-    #searchbt {
-        zoom: 0.5;
-    }
-    #locate {
-        zoom: 0.5;
-    }
-    #grupobt {
-        zoom: 0.5;
-    }
-    .ui-btn-text{
-        font-size: 10px;        
-    }
 }
 
 #resultado{
