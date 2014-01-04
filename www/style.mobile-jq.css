@@ -192,6 +192,22 @@ body {
     }
 }
 
+@media screen and (-webkit-device-pixel-ratio: 2) {
+    #acercade {
+        font-size: 8px;
+        top: 55px;
+    }
+    #salidaapp {
+        zoom: 0.8;
+    }
+    #searchbt {
+        zoom: 0.8;
+    }
+    #locate {
+        zoom: 0.8;
+    }
+}
+
 #resultado{
     position: absolute;
     bottom: 60px;

@@ -79,7 +79,10 @@ $(document).ready(function() {
         caracteristicas();
     });
 
-
+    $("#searchbt").click(function() {
+        $.mobile.changePage("#searchpage");
+        $('#query').focus();
+    });
 
     $("#resultado").click(function() {
         $("#resultado").fadeOut("slow", function() {
