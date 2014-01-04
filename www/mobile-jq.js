@@ -17,6 +17,12 @@ $(document).ready(function() {
         }
     });
 
+    var platf = device.platform;
+
+    if (platf === "iPhone") {
+        $("#salirapp").hide();
+    }
+
     $('#popupUbicacion-screen').click(function() {
         $.mobile.changePage("#manpage");
         logp("popup manpage");
