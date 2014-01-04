@@ -17,9 +17,15 @@ $(document).ready(function() {
         }
     });
 
-    var platf = device.platform;
+    var platf = "Otro";
 
-    if (platf === "iPhone") {
+    try {
+        platf = device.platform;
+    } catch (e) {
+        platf = "Otro";
+    }
+    
+    if (platf !== "Android") {
         $("#salirapp").hide();
     }
 
