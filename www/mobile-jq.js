@@ -25,7 +25,7 @@ $(document).ready(function() {
         platf = "Otro";
     }
     
-    if (platf !== "Android") {
+    if (platf != "Android") {
         $("#salirapp").hide();
     }
 
