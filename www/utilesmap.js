@@ -82,5 +82,6 @@ function caracteristicas() {
             'Version: ' + device.version + '<br />'+*/
             'Pixel radio: '+window.devicePixelRatio+
             ', Ancho: '+$(window).width()+
-            ', Alto: '+$(window).height());
+            ', Alto: '+$(window).height()+
+            ', Plataforma: '+device.platform);
 }
