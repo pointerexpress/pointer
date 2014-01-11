@@ -194,7 +194,7 @@ $(document).ready(function() {
         // only listen to the first event triggered
         $('#searchpage').die('pageshow', arguments.callee);
     });
-
+getLocationInicial();
 });
 
 var delay = (function() {
