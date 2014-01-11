@@ -84,5 +84,4 @@ function caracteristicas() {
             ', Ancho: '+$(window).width()+
             ', Alto: '+$(window).height()+
             ', Plataforma: '+device.platform);
-    logp(map.zoom);
 }

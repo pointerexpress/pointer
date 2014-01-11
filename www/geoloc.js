@@ -38,7 +38,7 @@ function showLocationInicial(position) {
             map.getProjectionObject() //to Spherical Mercator Projection
             );
     showpunto(lonLat.lon, lonLat.lat);
-    map.zoomTo(10);
+    map.zoomTo(7);
 }
 
 function onError(error) {
