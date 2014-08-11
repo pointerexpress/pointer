@@ -14,13 +14,12 @@
 :: KIND, either express or implied.  See the License for the
 :: specific language governing permissions and limitations
 :: under the License.
-
 @ECHO OFF
-SET script_path="%~dp0list-emulator-images"
-IF EXIST %script_path% (
-        node "%script_path%" %*
+SET full_path=%~dp0
+IF EXIST %full_path%cordova.js (
+    cscript "%full_path%cordova.js" list-emulator-images //nologo
 ) ELSE (
     ECHO. 
-    ECHO ERROR: Could not find 'list-emulator-images' script in 'cordova\lib' folder, aborting...>&2
+    ECHO ERROR: Could not find 'cordova.js' in cordova/lib, aborting...>&2
     EXIT /B 1
 )
