@@ -27,3 +27,8 @@ proguard/
 *.ipr
 *.iws
 .idea/
+/desa/pmap/nbproject/private/
+/desa/pointer2/nbproject/private
+
+plugins/
+node_modules/
